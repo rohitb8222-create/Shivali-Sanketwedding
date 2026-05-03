@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Wedding Invitation - Shivali & Sanket</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #1c0307;
-            --card-bg: rgba(28, 3, 7, 0.95);
-            --gold: #d4af37;
-            --light-gold: #f3e5ab;
-            --white: #ffffff;
-            --text-color: #f9f6f0;
+            --primary-text: #1f2937; /* गडद मजकुराचा रंग */
+            --accent-green: #065f46; /* गडद हिरवा रंग */
+            --accent-pink: #9d174d; /* गडद गुलाबी रंग */
+            --light-text: #374151; /* मध्यम गडद राखाडी */
         }
 
         * {
@@ -23,167 +21,140 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 50% 50%, #460c15 0%, #1c0307 100%);
-            color: var(--text-color);
+            background-color: #f3f4f6; /* बाहेरील भागाचा रंग */
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
-            overflow-x: hidden;
+            padding: 20px;
         }
 
         .invitation-card {
             width: 100%;
-            max-width: 480px; /* Mobile-friendly width */
-            background: var(--card-bg);
-            border: 3px double var(--gold);
-            border-radius: 24px;
-            padding: 35px 20px;
+            max-width: 460px;
+            /* 👉 बॅकग्राउंड इमेज थेट कार्डच्या आत सेट केली आहे 👈 */
+            background-image: url('your-image.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 3px double var(--accent-green);
+            border-radius: 20px;
+            padding: 30px 18px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(212, 175, 55, 0.15);
-            position: relative;
-            animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            color: var(--primary-text);
         }
 
-        /* Animated Floating Gold Background particles */
-        .invitation-card::before {
-            content: '⚜️';
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            color: var(--gold);
-            font-size: 1.2rem;
-            animation: pulse 2s infinite alternate;
-        }
-        .invitation-card::after {
-            content: '⚜️';
-            position: absolute;
-            bottom: 15px;
-            right: 20px;
-            color: var(--gold);
-            font-size: 1.2rem;
-            animation: pulse 2s infinite alternate;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.6; }
-            100% { transform: scale(1.15); opacity: 1; }
+        /* कोणतीही शॅडो नाही */
+        .om-section, .shlok-text, .title-main, .invite-text, 
+        .couple-wrapper, .details-sub, .events-section, 
+        .location-section, .footer-section {
+            text-shadow: none;
         }
 
         .om-section {
             font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin-bottom: 18px;
+            font-size: 0.9rem;
+            color: var(--accent-pink);
+            letter-spacing: 2.5px;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out;
+            font-weight: 600;
         }
 
         .shlok-text {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-style: italic;
-            color: var(--light-gold);
+            color: var(--primary-text);
             line-height: 1.45;
-            margin-bottom: 22px;
-            letter-spacing: 0.5px;
-            max-width: 380px;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            max-width: 360px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         .title-main {
             font-family: 'Cinzel', serif;
-            font-size: 1.7rem;
-            color: var(--white);
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+            font-size: 1.6rem;
+            color: var(--primary-text);
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
+            font-weight: 700;
         }
 
         .divider {
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 0 auto 18px;
+            width: 80px;
+            height: 1.5px;
+            background: var(--accent-green);
+            margin: 0 auto 15px;
         }
 
         .invite-text {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: var(--light-gold);
-            margin-bottom: 20px;
-            max-width: 360px;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            color: var(--light-text);
+            margin-bottom: 18px;
+            max-width: 340px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         /* Calligraphy Names */
         .couple-wrapper {
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .names {
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
-            color: var(--gold);
+            font-size: 3.6rem;
+            color: var(--accent-green);
             line-height: 0.75;
-            text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+            font-weight: 600;
         }
 
         .and-text {
             font-family: 'Cinzel', serif;
-            font-size: 0.88rem;
-            color: var(--white);
-            margin: 18px 0;
+            font-size: 0.8rem;
+            color: var(--accent-pink);
+            margin: 12px 0;
             display: block;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         .details-sub {
-            font-size: 0.71rem;
-            color: #d1b87a;
+            font-size: 0.68rem;
+            color: var(--light-text);
             display: block;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            padding: 0 15px;
-            line-height: 1.4;
-            max-width: 420px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            padding: 0 10px;
+            line-height: 1.35;
+            max-width: 380px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         /* Event Cards */
         .events-section {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin: 25px 0;
+            gap: 10px;
+            margin: 20px 0;
         }
 
         .event-card {
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 14px;
-            padding: 14px;
+            background: rgba(255, 255, 255, 0.6); /* पारदर्शक लेयर */
+            border: 1px solid var(--accent-green);
+            border-radius: 10px;
+            padding: 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all 0.3s ease;
-        }
-
-        .event-card:hover {
-            transform: translateY(-4px);
-            background: rgba(212, 175, 55, 0.12);
-            border-color: var(--gold);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
         }
 
         .event-details {
@@ -192,92 +163,95 @@
         }
 
         .event-title {
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            color: var(--gold);
-            margin-bottom: 3px;
-            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            margin-bottom: 2px;
+            font-weight: 600;
         }
 
         .event-time {
-            font-size: 0.78rem;
-            color: var(--light-gold);
+            font-size: 0.75rem;
+            color: var(--primary-text);
+            font-weight: 600;
         }
 
         .event-icon {
-            font-size: 1.3rem;
-            color: var(--gold);
+            font-size: 1.2rem;
+            color: var(--accent-pink);
             width: 15%;
             text-align: right;
         }
 
         /* Venue section */
         .location-section {
-            margin-top: 25px;
-            padding-top: 18px;
-            border-top: 1px dashed rgba(212, 175, 55, 0.3);
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--accent-green);
         }
 
         .location-title {
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            color: var(--gold);
-            margin-bottom: 6px;
-            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: var(--accent-pink);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
 
         .location-text {
-            font-size: 0.8rem;
-            color: var(--text-color);
-            margin-bottom: 16px;
-            max-width: 350px;
+            font-size: 0.78rem;
+            color: var(--primary-text);
+            margin-bottom: 14px;
+            max-width: 340px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.45;
+            line-height: 1.4;
+            font-weight: 500;
         }
 
         .map-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-            padding: 10px 25px;
+            gap: 5px;
+            background: var(--accent-pink);
+            color: #ffffff;
+            border: none;
+            padding: 8px 20px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
         .map-btn:hover {
-            background: var(--gold);
-            color: var(--bg-color);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            background: #9c1558;
             transform: scale(1.02);
         }
 
         /* Footer Section */
         .footer-section {
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .footer-text {
             font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            color: var(--gold);
+            font-size: 0.9rem;
+            color: var(--primary-text);
             font-style: italic;
-            letter-spacing: 1.5px;
-            margin-bottom: 4px;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+            font-weight: 600;
         }
 
         .footer-sub {
-            font-size: 0.72rem;
-            color: var(--light-gold);
-            letter-spacing: 2px;
+            font-size: 0.7rem;
+            color: var(--accent-green);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            font-weight: 600;
         }
     </style>
 </head>
