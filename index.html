@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation - Shivali & Sanket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1c0307;
+            --card-bg: rgba(28, 3, 7, 0.95);
+            --gold: #d4af37;
+            --light-gold: #f3e5ab;
+            --white: #ffffff;
+            --text-color: #f9f6f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 50%, #460c15 0%, #1c0307 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+
+        .invitation-card {
+            width: 100%;
+            max-width: 480px; /* Mobile-friendly width */
+            background: var(--card-bg);
+            border: 3px double var(--gold);
+            border-radius: 24px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(212, 175, 55, 0.15);
+            position: relative;
+            animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Animated Floating Gold Background particles */
+        .invitation-card::before {
+            content: '⚜️';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            color: var(--gold);
+            font-size: 1.2rem;
+            animation: pulse 2s infinite alternate;
+        }
+        .invitation-card::after {
+            content: '⚜️';
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            color: var(--gold);
+            font-size: 1.2rem;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.15); opacity: 1; }
+        }
+
+        .om-section {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .shlok-text {
+            font-size: 0.78rem;
+            font-style: italic;
+            color: var(--light-gold);
+            line-height: 1.45;
+            margin-bottom: 22px;
+            letter-spacing: 0.5px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .title-main {
+            font-family: 'Cinzel', serif;
+            font-size: 1.7rem;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto 18px;
+        }
+
+        .invite-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--light-gold);
+            margin-bottom: 20px;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Calligraphy Names */
+        .couple-wrapper {
+            margin: 20px 0;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--gold);
+            line-height: 0.75;
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+        }
+
+        .and-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.88rem;
+            color: var(--white);
+            margin: 18px 0;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .details-sub {
+            font-size: 0.71rem;
+            color: #d1b87a;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 0 15px;
+            line-height: 1.4;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Event Cards */
+        .events-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .event-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 14px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            background: rgba(212, 175, 55, 0.12);
+            border-color: var(--gold);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .event-details {
+            text-align: left;
+            width: 80%;
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--gold);
+            margin-bottom: 3px;
+            letter-spacing: 1px;
+        }
+
+        .event-time {
+            font-size: 0.78rem;
+            color: var(--light-gold);
+        }
+
+        .event-icon {
+            font-size: 1.3rem;
+            color: var(--gold);
+            width: 15%;
+            text-align: right;
+        }
+
+        /* Venue section */
+        .location-section {
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+
+        .location-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-bottom: 6px;
+            letter-spacing: 1.5px;
+        }
+
+        .location-text {
+            font-size: 0.8rem;
+            color: var(--text-color);
+            margin-bottom: 16px;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.45;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 10px 25px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+
+        .map-btn:hover {
+            background: var(--gold);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Footer Section */
+        .footer-section {
+            margin-top: 30px;
+        }
+
+        .footer-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--gold);
+            font-style: italic;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .footer-sub {
+            font-size: 0.72rem;
+            color: var(--light-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <div class="om-section">
+            ॥ Shree Ganeshaya Namah ॥<br>
+            ॥ Om Namah Shivay ॥
+        </div>
+
+        <div class="shlok-text">
+            ॥ Vakratunda Mahakaya Suryakoti Samaprabha, Nirvighnam Kurume Deva Sarva-Karyeshu Sarvada ॥
+        </div>
+
+        <div class="title-main">Wedding Ceremony</div>
+        <div class="divider"></div>
+
+        <div class="invite-text">
+            With immense pleasure, Patil Family request the honour of your gracious presence with family & friends at the wedding ceremony of
+        </div>
+
+        <div class="couple-wrapper">
+            <div class="names">Shivali</div>
+            <span class="details-sub">(D/o. Mrs. Harshada & Mr. Mahantesh M. Patil & G/o. Mrs. Leela & Late Mallangouda M. Patil)</span>
+            
+            <span class="and-text">— with —</span>
+            
+            <div class="names">Sanket</div>
+            <span class="details-sub">(S/o. Mrs. Sadhana & Mr. Sanjay B. Naik)</span>
+        </div>
+
+        <div class="events-section">
+            <div class="event-card">
+                <div class="event-details">
+                    <div class="event-title">Date & Time</div>
+                    <div class="event-time">Wednesday, 24th June 2026 | 12:41 pm</div>
+                </div>
+                <div class="event-icon">🕉️</div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-details">
+                    <div class="event-title">Venue Details</div>
+                    <div class="event-time">The Ceremony Banquet, 1st Floor, Kalyan - Bhiwandi Road, Next to Bridge / Durgadi Fort, Kon - Kalyan.</div>
+                </div>
+                <div class="event-icon">✨</div>
+            </div>
+        </div>
+
+        <div class="location-section">
+            <div class="location-title">Invitees</div>
+            <div class="location-text">
+                <strong>Adv. Mahantesh M. Patil, Mrs. Harshada M. Patil & Adv. Shalmali M. Patil</strong><br>
+                B-503, Devi - Vihar CHS. Ltd., Agra Road, Near Lal Chowky, Kalyan (W), 421 301. Dist. Thane<br>
+                <em>Mob: 99300 01054 / 98197 55925</em>
+            </div>
+            
+            <a href="https://share.google/eQ1mxIkyGDh3e46xi" target="_blank" class="map-btn">
+                📍 View Map Location
+            </a>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-text">WITH BEST COMPLIMENTS</div>
+            <div class="footer-sub">Patil & Naik Family</div>
+        </div>
+    </div>
+
+</body>
+</html>
