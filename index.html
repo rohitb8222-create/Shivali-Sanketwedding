@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-text: #1f2937; /* गडद मजकुराचा रंग */
+            --primary-text: #111827; /* गडद मजकूर */
             --accent-green: #065f46; /* गडद हिरवा रंग */
             --accent-pink: #9d174d; /* गडद गुलाबी रंग */
             --light-text: #374151; /* मध्यम गडद राखाडी */
@@ -21,7 +21,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f3f4f6; /* बाहेरील भागाचा रंग */
+            background-color: #f3f4f6; /* साधा बॅकग्राउंड */
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -32,51 +32,45 @@
         .invitation-card {
             width: 100%;
             max-width: 460px;
-            /* 👉 बॅकग्राउंड इमेज थेट कार्डच्या आत सेट केली आहे 👈 */
+            /* बॅकग्राउंड इमेज थेट कार्डच्या आत ऑटो-फिट केली आहे */
             background-image: url('your-image.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: 3px double var(--accent-green);
+            border: none; /* बॉर्डर पूर्णपणे काढून टाकली आहे */
             border-radius: 20px;
             padding: 30px 18px;
             text-align: center;
             color: var(--primary-text);
-        }
-
-        /* कोणतीही शॅडो नाही */
-        .om-section, .shlok-text, .title-main, .invite-text, 
-        .couple-wrapper, .details-sub, .events-section, 
-        .location-section, .footer-section {
-            text-shadow: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         .om-section {
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--accent-pink);
             letter-spacing: 2.5px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-transform: uppercase;
             font-weight: 600;
         }
 
         .shlok-text {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-style: italic;
-            color: var(--primary-text);
-            line-height: 1.45;
-            margin-bottom: 20px;
-            letter-spacing: 0.3px;
+            color: var(--light-text);
+            line-height: 1.4;
+            margin-bottom: 16px;
+            letter-spacing: 0.2px;
             max-width: 360px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .title-main {
             font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             color: var(--primary-text);
             margin-bottom: 5px;
             letter-spacing: 0.5px;
@@ -92,10 +86,10 @@
         }
 
         .invite-text {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             line-height: 1.45;
             color: var(--light-text);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             max-width: 340px;
             margin-left: auto;
             margin-right: auto;
@@ -104,20 +98,20 @@
 
         /* Calligraphy Names */
         .couple-wrapper {
-            margin: 15px 0;
+            margin: 14px 0;
         }
 
         .names {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.6rem;
+            font-size: 3.5rem;
             color: var(--accent-green);
-            line-height: 0.75;
+            line-height: 0.7;
             font-weight: 600;
         }
 
         .and-text {
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--accent-pink);
             margin: 12px 0;
             display: block;
@@ -126,87 +120,72 @@
         }
 
         .details-sub {
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: var(--light-text);
             display: block;
-            margin-top: 4px;
-            margin-bottom: 4px;
-            padding: 0 10px;
-            line-height: 1.35;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            padding: 0 8px;
+            line-height: 1.3;
             max-width: 380px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 500;
         }
 
-        /* Event Cards */
-        .events-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .event-card {
-            background: rgba(255, 255, 255, 0.6); /* पारदर्शक लेयर */
+        /* Section Cards */
+        .section-box {
+            background: rgba(255, 255, 255, 0.75); /* फिकट पारदर्शक बॉक्स */
             border: 1px solid var(--accent-green);
-            border-radius: 10px;
-            padding: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
 
-        .event-details {
-            text-align: left;
-            width: 80%;
-        }
-
-        .event-title {
+        .section-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             color: var(--accent-green);
-            margin-bottom: 2px;
+            margin-bottom: 1px;
             font-weight: 600;
         }
 
-        .event-time {
-            font-size: 0.75rem;
+        .section-text {
+            font-size: 0.68rem;
             color: var(--primary-text);
             font-weight: 600;
         }
 
-        .event-icon {
-            font-size: 1.2rem;
-            color: var(--accent-pink);
-            width: 15%;
-            text-align: right;
-        }
-
-        /* Venue section */
+        /* Location Section */
         .location-section {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px dashed var(--accent-green);
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
 
         .location-title {
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--accent-pink);
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            margin-bottom: 4px;
+            letter-spacing: 0.8px;
             font-weight: 600;
         }
 
         .location-text {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             color: var(--primary-text);
-            margin-bottom: 14px;
-            max-width: 340px;
+            margin-bottom: 12px;
+            max-width: 330px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.4;
+            line-height: 1.35;
             font-weight: 500;
         }
 
@@ -217,39 +196,44 @@
             background: var(--accent-pink);
             color: #ffffff;
             border: none;
-            padding: 8px 20px;
+            padding: 7px 18px;
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
             border-radius: 4px;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         .map-btn:hover {
             background: #9c1558;
-            transform: scale(1.02);
+            transform: scale(1.01);
         }
 
         /* Footer Section */
         .footer-section {
-            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 10px;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
 
         .footer-text {
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            color: var(--primary-text);
+            font-size: 0.85rem;
+            color: var(--accent-green);
             font-style: italic;
-            letter-spacing: 1px;
-            margin-bottom: 3px;
+            letter-spacing: 0.8px;
+            margin-bottom: 2px;
             font-weight: 600;
         }
 
         .footer-sub {
-            font-size: 0.7rem;
-            color: var(--accent-green);
-            letter-spacing: 1.5px;
+            font-size: 0.65rem;
+            color: var(--accent-pink);
+            letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 600;
         }
@@ -284,22 +268,14 @@
             <span class="details-sub">(S/o. Mrs. Sadhana & Mr. Sanjay B. Naik)</span>
         </div>
 
-        <div class="events-section">
-            <div class="event-card">
-                <div class="event-details">
-                    <div class="event-title">Date & Time</div>
-                    <div class="event-time">Wednesday, 24th June 2026 | 12:41 pm</div>
-                </div>
-                <div class="event-icon">🕉️</div>
-            </div>
+        <div class="section-box">
+            <div class="section-title">Date & Time</div>
+            <div class="section-text">Wednesday, 24th June 2026 | 12:41 pm 🕉️</div>
+        </div>
 
-            <div class="event-card">
-                <div class="event-details">
-                    <div class="event-title">Venue Details</div>
-                    <div class="event-time">The Ceremony Banquet, 1st Floor, Kalyan - Bhiwandi Road, Next to Bridge / Durgadi Fort, Kon - Kalyan.</div>
-                </div>
-                <div class="event-icon">✨</div>
-            </div>
+        <div class="section-box">
+            <div class="section-title">Venue Details</div>
+            <div class="section-text">The Ceremony Banquet, 1st Floor, Kalyan - Bhiwandi Road, Next to Bridge / Durgadi Fort, Kon - Kalyan. ✨</div>
         </div>
 
         <div class="location-section">
